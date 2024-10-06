@@ -14,6 +14,7 @@
 body {
   padding: 0%;
   margin: 0%;
+  background-color: #222323;
 }
 .logo {
   font-weight: 300;
@@ -86,6 +87,7 @@ body {
 }
 .content img {
   width: 550px;
+  animation: slide-in-left;
 }
 .page-1 .content {
   display: flex;
@@ -101,10 +103,11 @@ body {
   font-weight: 200;
   cursor: pointer !important;
   box-shadow: 0 0 40px var(--theme_color);
-  transition: all 0.3s linear;
+  transition: all 0.4s ease-in;
   font-size: 15px;
 }
 .buy-now-button:hover {
+  font-weight: 250;
   background-color: var(--text_color);
   color: #222323;
 }
@@ -180,7 +183,11 @@ a {
   align-items: center;
   height: 100vh;
   background-color: #222323;
+  animation: page-opacity;
+  animation-timeline: view();
+  animation-range: entry 0;
 }
+
 .workout-tracking {
   background-image: linear-gradient(to left, transparent, #222323),
     url("images/page-2\ woman\ .png");
@@ -189,17 +196,25 @@ a {
   width: 960px;
   margin-right: 20px;
 }
-.workout-tracking .page-heading {
+@keyframes page-opacity {
+  from {
+    filter: brightness(30%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
+.page-heading {
   display: flex;
   align-items: center;
   max-width: 350px;
 }
-.workout-tracking img {
+.page-heading > img {
   width: 75px;
 }
 .page-heading > span {
-  letter-spacing: 5px;
   font-weight: 200;
+  letter-spacing: 5px;
   font-family: "montserrat", sans-serif;
   font-size: 13px;
   margin-left: 12px;
@@ -211,7 +226,7 @@ a {
   font-size: 50px;
   font-weight: 300;
   margin-top: 30px;
-  letter-spacing: -3px;
+  letter-spacing: -1px;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -219,7 +234,7 @@ a {
   font-weight: 200;
   margin-top: 50px;
 }
-.image-holder > img {
+.image-holder > #page-2-image {
   position: absolute;
   top: 20%;
   right: 50%;
@@ -236,4 +251,242 @@ a {
   height: 100%;
   background: linear-gradient(755deg, var(--theme_color), #161717, #131414);
   width: 35%;
+}
+.page-3 {
+  margin-top: 50px;
+  position: relative;
+  height: 90vh;
+  display: flex;
+  animation: page-opacity;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.page-3 > .image-holder {
+  background: linear-gradient(
+    755deg,
+    var(--theme_color),
+    #161717,
+    #131414,
+    rgb(7, 7, 79)
+  );
+  width: 25%;
+}
+.image-holder > #page-3-image {
+  width: 420px;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  animation: slide-in;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+@keyframes slide-in {
+  25% {
+    transform: translateY(300px);
+  }
+}
+.notification-system {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-left: 1px solid #222323;
+  margin-left: 5%;
+  background: linear-gradient(75deg, #303131, #222323, #222323);
+}
+.page-4 {
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+}
+.page-4-heading h3 {
+  font-size: 50px;
+  font-weight: 300;
+}
+.page-4 .page-4-heading img {
+  width: 60px;
+}
+.page-4-image-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page-4-heading-text {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.subtext {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.subtext span {
+  width: 680px;
+  font-weight: 200;
+}
+.content4 {
+  display: flex;
+  justify-content: center;
+
+  /* background: url(images/Screenshot\ 2024-10-05\ at\ 19.27.19.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%; */
+}
+.content4 img {
+  width: 1040px;
+  margin: 20px;
+}
+
+.page-4 .buy-now-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.page-4 .buy-now-container .buy-now-button {
+  width: 300px;
+}
+
+.page-5 {
+  margin-top: 50px;
+  height: 90vh;
+  background-image: linear-gradient(to left, transparent, #222323),
+    url(images/youngbro.png);
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  background-attachment: fixed;
+}
+.alert {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 200px;
+  margin-bottom: 100px;
+}
+.page-6 {
+  position: relative;
+  background: radial-gradient(
+      circle at 43.97295633951823% 52.83325195312501%,
+      rgba(126, 161, 230, 0.63) 0%,
+      21.349999999999998%,
+      rgba(126, 161, 230, 0) 35%
+    ),
+    radial-gradient(
+      circle at 5.601628621419271% 89.0545654296875%,
+      #000000 0%,
+      17.5%,
+      rgba(0, 0, 0, 0) 35%
+    ),
+    radial-gradient(
+      circle at 95.35859425862631% 89.99893188476562%,
+      #000000 0%,
+      20%,
+      rgba(0, 0, 0, 0) 40%
+    ),
+    radial-gradient(
+      circle at 56.95167541503906% 53.199005126953125%,
+      rgba(194, 125, 255, 0.71) 0%,
+      34.5%,
+      rgba(194, 125, 255, 0) 50%
+    ),
+    radial-gradient(
+      circle at 4.5797475179036455% 9.796346028645834%,
+      #000000 0%,
+      42%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+    radial-gradient(
+      circle at 93.6865234375% 11.42578125%,
+      #000000 0%,
+      42%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+    radial-gradient(
+      circle at 48.9013671875% 49.521484375%,
+      #000000 0%,
+      100%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+.page-6 .page-paragraph h1 {
+  padding-top: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-wrapper img {
+  width: 750px;
+}
+.block {
+  background-color: #222323;
+  width: 400px;
+  border-radius: 20px;
+  margin: 20px;
+  height: 150px;
+}
+.block h1 {
+  display: flex;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.block h1 span {
+  font-weight: 300;
+  margin: 20px;
+  font-size: 25px;
+  margin-left: 10px;
+}
+.block h1 img {
+  width: 50px;
+  margin-left: 10px;
+  /* background-color: #808282; */
+}
+.block .paragraph {
+  margin: 0 20px;
+  font-weight: 200;
+}
+#top-left {
+  position: absolute;
+  top: 18%;
+  left: 7%;
+  opacity: 0;
+  animation: slideInLeft forwards;
+  animation-timeline: view();
+}
+#bottom-left {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+#bottom-right {
+  position: absolute;
+  top: 52%;
+  right: 10%;
+}
+#top-right {
+  position: absolute;
+  top: 14%;
+  right: 7%;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
